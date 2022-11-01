@@ -48,7 +48,9 @@ if(argv.w){
 //}
 
 if (argv.z) {
-	let timezone = moment.tz.guess();
+    baseApiURL.searchParams.append('timezone', argv.z);
+}else{
+    let timezone = moment.tz.guess();
     baseApiURL.searchParams.append('timezone', timezone);
 }
 
