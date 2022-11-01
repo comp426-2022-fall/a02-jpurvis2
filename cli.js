@@ -68,9 +68,9 @@ if(typeof argv.d !== 'undefined'){
 }
 fetch(decodeURIComponent(baseApiURL.href)).then(function(response){
     response.json().then(function(data){
-        //if(argv.j){
+        if(argv.j){
             console.log(data);
-        //}
+        }
          if(data.daily.precipitation_hours[day] >0){
             process.stdout.write("You might need your galoshes");
          }else{
