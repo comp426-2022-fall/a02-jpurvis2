@@ -75,7 +75,7 @@ fetch(decodeURIComponent(baseApiURL.href)).then(function(response){
         if(argv.j){
             console.log(data);
         }
-        if(data){
+        if(data.daily){
          if(data.daily.precipitation_hours[day] >0){
             process.stdout.write("You might need your galoshes");
          }else{
