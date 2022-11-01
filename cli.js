@@ -37,11 +37,18 @@ if(argv.n){
 if(argv.s){
     baseApiURL.searchParams.append('latitude', -argv.s.toFixed(2));
 }
+if(!argv.n && !argv.s){
+    baseApiURL.searchParams.append('latitude', 35);
+}
 if(argv.e){
     baseApiURL.searchParams.append('longitude', argv.e.toFixed(2));
 }
 if(argv.w){
     baseApiURL.searchParams.append('longitude', -argv.w.toFixed(2));
+
+}
+if(!argv.e && !argv.w){
+    baseApiURL.searchParams.append('longitude', -79);
 }
 //if(argv.z){
 //baseApiURL.searchgiParams.append('timezone',moment.tz.guess());
