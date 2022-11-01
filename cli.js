@@ -37,9 +37,7 @@ if(argv.n){
 if(argv.s){
     baseApiURL.searchParams.append('latitude', -argv.s.toFixed(2));
 }
-if(!argv.n && !argv.s){
-    baseApiURL.searchParams.append('latitude', 35);
-}
+
 if(argv.e){
     baseApiURL.searchParams.append('longitude', argv.e.toFixed(2));
 }
@@ -47,9 +45,7 @@ if(argv.w){
     baseApiURL.searchParams.append('longitude', -argv.w.toFixed(2));
 
 }
-if(!argv.e && !argv.w){
-    baseApiURL.searchParams.append('longitude', -79);
-}
+
 //if(argv.z){
 //baseApiURL.searchgiParams.append('timezone',moment.tz.guess());
 //}
@@ -79,11 +75,13 @@ fetch(decodeURIComponent(baseApiURL.href)).then(function(response){
         if(argv.j){
             console.log(data);
         }
+        if(data){
          if(data.daily.precipitation_hours[day] >0){
             process.stdout.write("You might need your galoshes");
          }else{
              process.stdout.write("You will not need your galoshes");
          }
+        }
     //console.log(data);
     });
 });
