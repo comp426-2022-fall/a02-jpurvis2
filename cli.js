@@ -65,6 +65,7 @@ if(typeof argv.d !== 'undefined'){
         }
 }else{
     day = 1
+    console.log("tomorrow.")
 }
 fetch(decodeURIComponent(baseApiURL.href)).then(function(response){
     response.json().then(function(data){
