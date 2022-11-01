@@ -29,9 +29,7 @@ if(argv.h === true){
 const baseApiURL = new URL('https://api.open-meteo.com/v1/forecast?current_weather=true&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,precipitation_hours,windspeed_10m_max,windgusts_10m_max,winddirection_10m_dominant');
 
  
-if(argv.j){
-    process.exit(0);
-}
+
 
 if(argv.n){
     baseApiURL.searchParams.append('latitude', argv.n.toFixed(2));
@@ -68,9 +66,9 @@ if(typeof argv.d !== 'undefined'){
 }
 fetch(decodeURIComponent(baseApiURL.href)).then(function(response){
     response.json().then(function(data){
-        if(argv.j){
+        //if(argv.j){
             console.log(data);
-        }
+        //}
          if(data.daily.precipitation_hours[day] >0){
             process.stdout.write("You might need your galoshes");
          }else{
