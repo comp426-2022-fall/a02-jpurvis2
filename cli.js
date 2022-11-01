@@ -58,10 +58,10 @@ let day = argv.d;
 if(typeof argv.d !== 'undefined'){
     if(argv.d == 0){
         console.log("today.")
-        }else if (argv.d > 1 ){
-            console.log("in " + argv.d + " days.")
+        }else if (argv.d == 1 ){
+            console.log("tomorrow.")
         } else {
-          console.log("tomorrow.")
+          console.log("in " + argv.d + " days.")
         }
 }else{
     day = 1
